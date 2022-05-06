@@ -1,6 +1,13 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AuthorController;
+use App\Http\Controllers\BookController;
+use App\Http\Controllers\BookIssueController;
+use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\dashboardController;
+use App\Http\Controllers\PublisherController;
+use App\Http\Controllers\CustomerController;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,3 +27,13 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::get('/dashboard');
+
+//Author routes
+Route::get('/authors', [AuthorController::class, 'index'])->name('authors');
+Route::get('/authors/create', [AuthorController::class, 'create'])->name('authors.create');
+Route::get('/authors/edit/{author}', [AuthorController::class, 'edit'])->name('authors.edit');
+Route::post('/authors/update/{id}', [AuthorController::class, 'update'])->name('authors.update');
+Route::post('/authors/delete/{id}', [AuthorController::class, 'destroy'])->name('authors.destroy');
+Route::post('/authors/create', [AuthorController::class, 'store'])->name('authors.store');
