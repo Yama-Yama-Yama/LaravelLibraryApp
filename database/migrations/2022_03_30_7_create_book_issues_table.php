@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('book_issues', function (Blueprint $table) {
             $table->id();
             $table->date('issue_date');
-            $table->date('return_day')->nullable();
+            $table->date('return_day');
             $table->boolean('issue_status');
             $table->timestamps();
             $table->foreignId('customer_id')->constrained();

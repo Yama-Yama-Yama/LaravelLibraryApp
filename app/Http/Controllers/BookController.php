@@ -4,6 +4,12 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Book;
+use App\Models\Author;
+use App\Models\Category;
+use App\Models\Publisher;
+use App\Http\Requests\StorebookRequest;
+use App\Http\Requests\UpdatebookRequest;
+use App\Http\Requests\StorebookissueRequest;
 
 class BookController extends Controller
 {
@@ -30,7 +36,7 @@ class BookController extends Controller
     public function store(StorebookRequest $request)
     {
         book::create($request->validated() + [
-            'status' => 'Y'
+            'status' => '0'
         ]);
         return redirect()->route('books');
     }

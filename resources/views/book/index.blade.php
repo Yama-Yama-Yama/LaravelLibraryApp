@@ -34,7 +34,7 @@
                                     <td>{{ $book->author->name }}</td>
                                     <td>{{ $book->publisher->name }}</td>
                                     <td>
-                                        @if ($book->status == 'Y')
+                                        @if ($book->status == '0')
                                             <span class='badge badge-success'>Available</span>
                                         @else
                                             <span class='badge badge-danger'>Issued</span>

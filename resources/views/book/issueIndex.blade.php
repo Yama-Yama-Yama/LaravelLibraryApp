@@ -27,16 +27,16 @@
                         </thead>
                         <tbody>
                             @forelse ($books as $book)
-                                <tr style='@if (date('Y-m-d') > $book->return_date->format('d-m-Y') && $book->issue_status == 'N') ) background:rgba(255,0,0,0.2) @endif'>
+                                <tr style='@if (date('Y-m-d') > $book->return_day->format('d-m-Y') && $book->issue_status == '0') ) background:rgba(255,0,0,0.2) @endif'>
                                     <td>{{ $book->id }}</td>
                                     <td>{{ $book->customer->name }}</td>
                                     <td>{{ $book->book->name }}</td>
                                     <td>{{ $book->customer->phone }}</td>
                                     <td>{{ $book->customer->email }}</td>
                                     <td>{{ $book->issue_date->format('d M, Y') }}</td>
-                                    <td>{{ $book->return_date->format('d M, Y') }}</td>
+                                    <td>{{ $book->return_day->format('d M, Y') }}</td>
                                     <td>
-                                        @if ($book->issue_status == 'Y')
+                                        @if ($book->issue_status == '1')
                                             <span class='badge badge-success'>Returned</span>
                                         @else
                                             <span class='badge badge-danger'>Issued</span>

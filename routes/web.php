@@ -45,3 +45,37 @@ Route::get('/book/edit/{book}', [BookController::class, 'edit'])->name('book.edi
 Route::post('/book/update/{id}', [BookController::class, 'update'])->name('book.update');
 Route::post('/book/delete/{id}', [BookController::class, 'destroy'])->name('book.destroy');
 Route::post('/book/create', [BookController::class, 'store'])->name('book.store');
+
+//Category routes
+Route::get('/categories', [CategoryController::class, 'index'])->name('categories');
+Route::get('/category/create', [CategoryController::class, 'create'])->name('category.create');
+Route::get('/category/edit/{category}', [CategoryController::class, 'edit'])->name('category.edit');
+Route::post('/category/update/{id}', [CategoryController::class, 'update'])->name('category.update');
+Route::post('/category/delete/{id}', [CategoryController::class, 'destroy'])->name('category.destroy');
+Route::post('/category/create', [CategoryController::class, 'store'])->name('category.store');
+
+//Publisher routes
+Route::get('/publishers', [PublisherController::class, 'index'])->name('publishers');
+Route::get('/publisher/create', [PublisherController::class, 'create'])->name('publisher.create');
+Route::get('/publisher/edit/{publisher}', [PublisherController::class, 'edit'])->name('publisher.edit');
+Route::post('/publisher/update/{id}', [PublisherController::class, 'update'])->name('publisher.update');
+Route::post('/publisher/delete/{id}', [PublisherController::class, 'destroy'])->name('publisher.destroy');
+Route::post('/publisher/create', [PublisherController::class, 'store'])->name('publisher.store');
+
+//Customers routes
+Route::get('/customers', [CustomerController::class, 'index'])->name('customers');
+Route::get('/customer/create', [CustomerController::class, 'create'])->name('customer.create');
+Route::get('/customer/edit/{customer}', [CustomerController::class, 'edit'])->name('customer.edit');
+Route::post('/customer/update/{id}', [CustomerController::class, 'update'])->name('customer.update');
+Route::post('/customer/delete/{id}', [CustomerController::class, 'destroy'])->name('customer.destroy');
+Route::post('/customer/create', [CustomerController::class, 'store'])->name('customer.store');
+Route::get('/customer/show/{id}', [CustomerController::class, 'show'])->name('customer.show');
+
+
+
+Route::get('/book_issue', [BookIssueController::class, 'index'])->name('book_issued');
+Route::get('/book-issue/create', [BookIssueController::class, 'create'])->name('book_issue.create');
+Route::get('/book-issue/edit/{id}', [BookIssueController::class, 'edit'])->name('book_issue.edit');
+Route::post('/book-issue/update/{id}', [BookIssueController::class, 'update'])->name('book_issue.update');
+Route::post('/book-issue/delete/{id}', [BookIssueController::class, 'destroy'])->name('book_issue.destroy');
+Route::post('/book-issue/create', [BookIssueController::class, 'store'])->name('book_issue.store');
