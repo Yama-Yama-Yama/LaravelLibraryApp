@@ -30,6 +30,15 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 Route::get('/dashboard');
 
+Route::middleware(['auth', 'isAdmin'])->group(function() 
+{
+    Route::get('/admin', function () 
+    {
+      return view('admin.dashboard');
+    })->name('dashboard');
+});
+Route::middleware(['auth', 'isAdmin'])->group(function() 
+{
 //Author routes
 Route::get('/authors', [AuthorController::class, 'index'])->name('authors');
 Route::get('/authors/create', [AuthorController::class, 'create'])->name('authors.create');
@@ -79,4 +88,4 @@ Route::get('/book-issue/edit/{id}', [BookIssueController::class, 'edit'])->name(
 Route::post('/book-issue/update/{id}', [BookIssueController::class, 'update'])->name('book_issue.update');
 Route::post('/book-issue/delete/{id}', [BookIssueController::class, 'destroy'])->name('book_issue.destroy');
 Route::post('/book-issue/create', [BookIssueController::class, 'store'])->name('book_issue.store');
-
+});
