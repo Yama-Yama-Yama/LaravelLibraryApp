@@ -15,7 +15,7 @@
                     <div class="message"></div>
                     <table class="content-table">
                         <thead>
-                            <th>S.No</th>
+                            <th>ID</th>
                             <th>Publisher Name</th>
                             <th>Edit</th>
                             <th>Delete</th>
@@ -49,4 +49,3 @@
         </div>
     </div>
 @endsection
-

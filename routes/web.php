@@ -37,6 +37,7 @@ Route::middleware(['auth', 'isAdmin'])->group(function()
       return view('admin.dashboard');
     })->name('dashboard');
 });
+
 Route::middleware(['auth', 'isAdmin'])->group(function() 
 {
 //Author routes

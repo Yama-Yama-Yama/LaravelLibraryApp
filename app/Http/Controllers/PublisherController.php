@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Publisher;
+use App\Http\Requests\StorepublisherRequest;
+use App\Http\Requests\UpdatepublisherRequest;
 
 class PublisherController extends Controller
 {

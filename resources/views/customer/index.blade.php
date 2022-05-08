@@ -15,7 +15,7 @@
                     <div class="message"></div>
                     <table class="content-table">
                         <thead>
-                            <th>S.No</th>
+                            <th>ID</th>
                             <th>Customer Name</th>
                             <th>Gender</th>
                             <th>Phone</th>

@@ -14,7 +14,7 @@
                 <div class="col-md-12">
                     <table class="content-table">
                         <thead>
-                            <th>S.No</th>
+                            <th>ID</th>
                             <th>Customer Name</th>
                             <th>Book Name</th>
                             <th>Phone</th>

@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @section('content')
-
+<link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <div id="admin-content">
         <div class="container">
             <div class="row">
@@ -16,7 +16,7 @@
                     <div class="message"></div>
                     <table class="content-table">
                         <thead>
-                            <th>S.No</th>
+                            <th>ID</th>
                             <th>Book Name</th>
                             <th>Category</th>
                             <th>Author</th>
