@@ -37,3 +37,11 @@ Route::get('/authors/edit/{author}', [AuthorController::class, 'edit'])->name('a
 Route::post('/authors/update/{id}', [AuthorController::class, 'update'])->name('authors.update');
 Route::post('/authors/delete/{id}', [AuthorController::class, 'destroy'])->name('authors.destroy');
 Route::post('/authors/create', [AuthorController::class, 'store'])->name('authors.store');
+
+//Book routes
+Route::get('/books', [BookController::class, 'index'])->name('books');
+Route::get('/book/create', [BookController::class, 'create'])->name('book.create');
+Route::get('/book/edit/{book}', [BookController::class, 'edit'])->name('book.edit');
+Route::post('/book/update/{id}', [BookController::class, 'update'])->name('book.update');
+Route::post('/book/delete/{id}', [BookController::class, 'destroy'])->name('book.destroy');
+Route::post('/book/create', [BookController::class, 'store'])->name('book.store');
