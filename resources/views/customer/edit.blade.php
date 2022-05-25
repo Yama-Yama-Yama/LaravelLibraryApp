@@ -22,6 +22,7 @@
                                 </div>
                             @enderror
                         </div>
+
                         <div class="form-group">
                             <label>Address</label>
                             <input type="text" class="form-control" placeholder="Address" name="address"
@@ -32,10 +33,22 @@
                                 </div>
                             @enderror
                         </div>
+                        
+                        <div class="form-group">
+                            <label>Date of Birth</label>
+                            <input type="date" class="form-control" name="birth_date"
+                                value="{{ $customer->birth_date }}" required>
+                            @error('birth_date')
+                                <div class="alert alert-danger" role="alert">
+                                    {{ $message }}
+                                </div>
+                            @enderror
+                        </div>
+
                         <div class="form-group">
                             <label>Gender</label>
                             <select name="gender" class="form-control">
-                                @if ($customer->gneder == 'male')
+                                @if ($customer->gender == 'male')
                                     <option value="male" selected>Male</option>
                                 @else
                                     <option value="female" selected>Female</option>
@@ -47,26 +60,8 @@
                                 </div>
                             @enderror
                         </div>
-                        <div class="form-group">
-                            <label>Class</label>
-                            <input type="text" class="form-control" placeholder="Class" name="class"
-                                value="{{ $customer->class }}" required>
-                            @error('class')
-                                <div class="alert alert-danger" role="alert">
-                                    {{ $message }}
-                                </div>
-                            @enderror
-                        </div>
-                        <div class="form-group">
-                            <label>Age</label>
-                            <input type="number" class="form-control" placeholder="Age" name="age"
-                                value="{{ $customer->age }}" required>
-                            @error('age')
-                                <div class="alert alert-danger" role="alert">
-                                    {{ $message }}
-                                </div>
-                            @enderror
-                        </div>
+                        
+                        
                         <div class="form-group">
                             <label>Phone</label>
                             <input type="phone" class="form-control" placeholder="Phone" name="phone"

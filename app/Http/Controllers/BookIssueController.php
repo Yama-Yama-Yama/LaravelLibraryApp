@@ -17,7 +17,7 @@ class BookIssueController extends Controller
     public function index()
     {
         return view('book.issueIndex', [
-            'books' => BookIssue::Paginate(5)
+            'books' => BookIssue::Paginate(15)
         ]);
     }
 
@@ -45,7 +45,7 @@ class BookIssueController extends Controller
         ]);
         $data->save();
         $book = book::find($request->book_id);
-        $book->status = '0';
+        $book->status = '1';
         $book->save();
         return redirect()->route('book_issued');
     }
@@ -70,12 +70,12 @@ class BookIssueController extends Controller
     {
         // dd($request->all());
         $book = BookIssue::find($id);
-        $book->issue_status = '1';
+        $book->issue_status = '0';
         $book->return_day = now();
         $book->save();
-        $bookk = book::find($book->book_id);
-        $bookk->status= '1';
-        $bookk->save();
+        $book = book::find($book->book_id);
+        $book->status= '0';
+        $book->save();
         return redirect()->route('book_issued');
     }
 

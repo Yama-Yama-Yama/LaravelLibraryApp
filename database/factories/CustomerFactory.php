@@ -26,7 +26,6 @@ class CustomerFactory extends Factory
             'email' => $this->faker->email(),
             'phone' => $this->faker->phoneNumber(),
             'address' => $this->faker->streetAddress(),
-            'user_id' => $this->faker->randomElement(User::pluck('id'))
         ];
     }
 }

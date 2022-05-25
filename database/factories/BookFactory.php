@@ -22,7 +22,8 @@ class BookFactory extends Factory
     {
         return [
             'name' => $this->faker->name(),
-            'status' => $this->faker->boolean(),
+            'status' => $this->faker->boolean(False),
+            'ISBN' => $this->faker->numberBetween(1000000000000, 9999999999999),
             'category_id' => $this->faker->randomElement(Category::pluck('id')),
             'author_id' => $this->faker->randomElement(Author::pluck('id')),
             'publisher_id' => $this->faker->randomElement(Publisher::pluck('id'))

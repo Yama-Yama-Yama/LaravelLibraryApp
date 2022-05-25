@@ -30,7 +30,6 @@ class StorecustomerRequest extends FormRequest
             'email' => 'required',
             'phone' => 'required',
             'address' => 'required',
-            'user_id' => 'required'
         ];
     }
 }

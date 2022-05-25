@@ -52,9 +52,8 @@ class CustomerController extends Controller
         $customer = customer::find($id);
         $customer->name = $request->name;
         $customer->address = $request->address;
+        $customer->birth_date = $request->birth_date;
         $customer->gender = $request->gender;
-        $customer->class = $request->class;
-        $customer->age = $request->age;
         $customer->phone = $request->phone;
         $customer->email = $request->email;
         $customer->save();

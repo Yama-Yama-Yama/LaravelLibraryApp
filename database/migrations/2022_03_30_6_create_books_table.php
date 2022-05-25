@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('name');
             $table->string('status');
             $table->timestamps();
+            $table->string('ISBN')->unique();
             $table->foreignId('category_id')->constrained();
             $table->foreignId('author_id')->constrained();
             $table->foreignId('publisher_id')->constrained();

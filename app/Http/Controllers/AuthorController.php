@@ -13,7 +13,7 @@ class AuthorController extends Controller
     public function index()
     {
         return view('author.index', [
-            'authors' => author::Paginate(5)
+            'authors' => author::Paginate(15)
         ]);
     }
 

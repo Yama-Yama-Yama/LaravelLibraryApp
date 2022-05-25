@@ -22,7 +22,7 @@
                             <th>Issue Date</th>
                             <th>Return Date</th>
                             <th>Status</th>
-                            <th>Edit</th>
+                            <th>Returned</th>
                             <th>Delete</th>
                         </thead>
                         <tbody>
@@ -36,21 +36,27 @@
                                     <td>{{ $book->issue_date->format('d M, Y') }}</td>
                                     <td>{{ $book->return_day->format('d M, Y') }}</td>
                                     <td>
-                                        @if ($book->issue_status == '1')
+                                        @if ($book->issue_status == '0')
                                             <span class='badge badge-success'>Returned</span>
                                         @else
                                             <span class='badge badge-danger'>Issued</span>
                                         @endif
                                     </td>
-                                    <td class="edit">
-                                        <a href="{{ route('book_issue.edit', $book->id) }}" class="btn btn-success">Edit</a>
+                                    <td class="update">
+                                        
+                                        <form action="{{ route('book_issue.update', $book->id) }}" method="post" autocomplete="off">
+                                            @csrf
+                                            <input type='submit' class='btn btn-success' name='save' value='Return Book'>
+                                        </form>
                                     </td>
                                     <td class="delete">
+                                        @if ($book->issue_status == '0')
                                         <form action="{{ route('book_issue.destroy', $book) }}" method="post"
                                             class="form-hidden">
                                             <button class="btn btn-danger">Delete</button>
                                             @csrf
                                         </form>
+                                        @endif
                                     </td>
                                 </tr>
                             @empty

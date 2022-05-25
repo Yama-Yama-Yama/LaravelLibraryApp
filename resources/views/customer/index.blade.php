@@ -20,7 +20,8 @@
                             <th>Gender</th>
                             <th>Phone</th>
                             <th>Email</th>
-                            <th>View</th>
+                            <th>Address</th>
+                            <th>Date of birth</th>
                             <th>Edit</th>
                             <th>Delete</th>
                         </thead>
@@ -32,10 +33,8 @@
                                     <td class="text-capitalize">{{ $customer->gender }}</td>
                                     <td>{{ $customer->phone }}</td>
                                     <td>{{ $customer->email }}</td>
-                                    <td class="view">
-                                        <button data-sid='{{ $customer->id }}>'
-                                            class="btn btn-primary view-btn">View</button>
-                                    </td>
+                                    <td>{{ $customer->address }}</td>
+                                    <td>{{ $customer->birth_date }}</td>
                                     <td class="edit">
                                         <a href="{{ route('customer.edit', $customer) }}>" class="btn btn-success">Edit</a>
                                     </td>
@@ -55,58 +54,11 @@
                         </tbody>
                     </table>
                     {{ $customers->links('vendor/pagination/bootstrap-4') }}
-                    <div id="modal">
-                        <div id="modal-form">
-                            <table cellpadding="10px" width="100%">
-
-                            </table>
-                            <div id="close-btn">X</div>
-                        </div>
-                    </div>
+                    
                 </div>
             </div>
         </div>
     </div>
     <script src="{{ asset('js/jquery-3.6.0.min.js') }}"></script>
-    <script type="text/javascript">
-        //Show shudent detail
-        $(".view-btn").on("click", function() {
-            var customer_id = $(this).data("sid");
-            $.ajax({
-                url: "http://127.0.0.1:8000/customer/show/"+customer_id,
-                type: "get",
-                success: function(customer) {
-                    console.log(customer);
-                    form ="<tr><td>Customer Name :</td><td><b>"+customer['name']+"</b></td></tr><tr><td>Address :</td><td><b>"+customer['address']+"</b></td></tr><tr><td>Gender :</td><td><b>"+ customer['gender']+ "</b></td></tr><tr><td>Class :</td><td><b>"+ customer['class']+ "</b></td></tr><tr><td>Age :</td><td><b>"+ customer['age']+ "</b></td></tr><tr><td>Phone :</td><td><b>"+ customer['phone']+ "</b></td></tr><tr><td>Email :</td><td><b>"+ customer['email']+ "</b></td></tr>";
-          console.log(form);
-
-                    $("#modal-form table").html(form);
-                    $("#modal").show();
-                }
-            });
-        });
-
-        //Hide modal box
-        $('#close-btn').on("click", function() {
-            $("#modal").hide();
-        });
-
-        //delete customer script
-        $(".delete-customer").on("click", function() {
-            var s_id = $(this).data("sid");
-            $.ajax({
-                url: "delete-customer.php",
-                type: "POST",
-                data: {
-                    sid: s_id
-                },
-                success: function(data) {
-                    $(".message").html(data);
-                    setTimeout(function() {
-                        window.location.reload();
-                    }, 2000);
-                }
-            });
-        });
-    </script>
+    
 @endsection

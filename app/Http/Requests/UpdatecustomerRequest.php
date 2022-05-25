@@ -3,9 +3,8 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
-use App\Models\Book;
 
-class StorebookissueRequest extends FormRequest
+class UpdatecustomerRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -25,8 +24,12 @@ class StorebookissueRequest extends FormRequest
     public function rules()
     {
         return [
-            'customer_id' => "required",
-            'book_id' => "required",
+            'name' => 'required',
+            'birth_date' => 'required',
+            'gender' => 'required',
+            'email' => 'required',
+            'phone' => 'required',
+            'address' => 'required',
         ];
     }
 }
