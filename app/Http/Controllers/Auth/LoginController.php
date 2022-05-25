@@ -33,7 +33,7 @@ class LoginController extends Controller
     {
         if (Auth::user()->user_type == 'admin')
         {
-            return 'admin';  // admin dashboard path
+            return '/books';  // admin dashboard path
         } 
         else 
         {

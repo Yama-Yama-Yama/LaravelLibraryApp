@@ -15,6 +15,16 @@
                     <form class="yourform" action="{{ route('book.store') }}" method="post" autocomplete="off">
                         @csrf
                         <div class="form-group">
+                            <label>Book ISBN</label>
+                            <input type="text" class="form-control @error('isbn') isinvalid @enderror"
+                                placeholder="Book ISBN" name="isbn" value="{{ old('isbn') }}" required>
+                            @error('isbn')
+                                <div class="alert alert-danger" role="alert">
+                                    {{ $message }}
+                                </div>
+                            @enderror
+                        </div>
+                        <div class="form-group">
                             <label>Book Name</label>
                             <input type="text" class="form-control @error('name') isinvalid @enderror"
                                 placeholder="Book Name" name="name" value="{{ old('name') }}" required>

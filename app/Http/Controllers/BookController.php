@@ -16,8 +16,14 @@ class BookController extends Controller
     //Könyvek megjelenítése
     public function index()
     {
-
         return view('book.index', [
+            'books' => book::Paginate(15)
+        ]);
+    }
+    //Könyv lista nem adminnak
+    public function listBooks()
+    {
+        return view('book.listBooks', [
             'books' => book::Paginate(15)
         ]);
     }
