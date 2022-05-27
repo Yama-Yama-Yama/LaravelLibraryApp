@@ -28,8 +28,6 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Route::get('/dashboard');
-
 Route::get('/listbooks', [BookController::class, 'listBooks'])->name('books');
 
 Route::middleware(['auth', 'isAdmin'])->group(function() 
@@ -76,11 +74,16 @@ Route::middleware(['auth', 'isAdmin'])->group(function()
   Route::get('/customer/show/{id}', [CustomerController::class, 'show'])->name('customer.show');
 
 
-
+  //Book issue routes
   Route::get('/book_issue', [BookIssueController::class, 'index'])->name('book_issued');
   Route::get('/book-issue/create', [BookIssueController::class, 'create'])->name('book_issue.create');
   Route::get('/book-issue/edit/{id}', [BookIssueController::class, 'edit'])->name('book_issue.edit');
   Route::post('/book-issue/update/{id}', [BookIssueController::class, 'update'])->name('book_issue.update');
   Route::post('/book-issue/delete/{id}', [BookIssueController::class, 'destroy'])->name('book_issue.destroy');
   Route::post('/book-issue/create', [BookIssueController::class, 'store'])->name('book_issue.store');
+
+  //Dashboard routes
+  Route::get('/dashboard', function () {
+    return view('dashboard');
+});
 });
