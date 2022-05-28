@@ -1,0 +1,90 @@
+body {
+    background-image: url("library1.jpg");
+  }
+  
+table {
+    background-color: rgba(0, 0, 0, 0,90);
+
+}
+
+th, td {
+    padding: 10px;
+    text-align: left;
+  }
+
+tr:nth-child(odd) {
+    background-color: white;
+    opacity: 0.95;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+    opacity: 0.95;
+}
+
+h1, h2 {
+    color: white;
+}
+
+.add-new {
+    background-color: yellowgreen;
+    color: white;
+    padding: 10px 25px;
+    margin-bottom: 5px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 8px;
+  }
+
+.add-new:hover{
+    color: white;
+    background-color: rgb(22, 214, 22);
+    text-decoration: none;
+}
+
+
+.card {
+    color: black;
+    background-color: white;
+    opacity: 0.80;
+}
+
+.card:hover {
+    color: black;
+    background-color: white;
+    opacity: 1.00;
+}
+
+.card-logout {
+    border-radius: 4px;
+    background-color: red;
+    opacity: 0.80;
+}
+
+.card-logout:hover {
+    border-radius: 4px;
+    background-color: red;
+    opacity: 1.00;
+}
+
+.card a{
+    color: black;
+}
+
+.card-logout a{
+    color: black;
+}
+
+.logout{
+    background-color: red;
+    color: black;
+    padding: 10px 25px;
+    margin-bottom: 5px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 8px;
+}

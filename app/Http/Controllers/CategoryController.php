@@ -13,7 +13,7 @@ class CategoryController extends Controller
     public function index()
     {
         return view('category.index', [
-            'categories' => category::Paginate(15)
+            'categories' => category::Paginate(10)
         ]);
 
     }

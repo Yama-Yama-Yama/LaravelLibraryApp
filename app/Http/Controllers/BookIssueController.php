@@ -17,7 +17,7 @@ class BookIssueController extends Controller
     public function index()
     {
         return view('book.issueIndex', [
-            'books' => BookIssue::Paginate(15)
+            'books' => BookIssue::Paginate(10)
         ]);
     }
 

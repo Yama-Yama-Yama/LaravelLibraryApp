@@ -17,14 +17,14 @@ class BookController extends Controller
     public function index()
     {
         return view('book.index', [
-            'books' => book::Paginate(15)
+            'books' => book::Paginate(10)
         ]);
     }
     //Könyv lista nem adminnak
     public function listBooks()
     {
         return view('book.listBooks', [
-            'books' => book::Paginate(15)
+            'books' => book::Paginate(10)
         ]);
     }
 
