@@ -62,10 +62,21 @@ h1, h2 {
     background-color: red;
     opacity: 0.80;
 }
+.card-register {
+    border-radius: 4px;
+    background-color: green;
+    opacity: 0.80;
+}
 
 .card-logout:hover {
     border-radius: 4px;
     background-color: red;
+    opacity: 1.00;
+}
+
+.card-register:hover {
+    border-radius: 4px;
+    background-color: green;
     opacity: 1.00;
 }
 
@@ -74,17 +85,10 @@ h1, h2 {
 }
 
 .card-logout a{
-    color: black;
+    color: white;
 }
 
-.logout{
-    background-color: red;
-    color: black;
-    padding: 10px 25px;
-    margin-bottom: 5px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    border-radius: 8px;
+.card-register a{
+    color: white;
 }
+

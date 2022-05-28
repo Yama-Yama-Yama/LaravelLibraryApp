@@ -71,10 +71,8 @@
           </div>
         </div>
       </div>
-
-<br>
-<br>
-
+    <br>
+    <br>
       <div class="row">
         <div class="col-xl-3 col-sm-6 col-12"> 
           <div class="card">
@@ -102,6 +100,22 @@
                   </div>
                   <div class="media-body text-center">
                     <h3><a class="nav-link" href="/customers">Customers</a></h3>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-xl-3 col-sm-6 col-12">
+          <div class="card">
+            <div class="card-register">
+              <div class="card-body">
+                <div class="media d-flex">
+                  <div class="align-self-center">
+                    <i class="icon-speech warning font-large-2 float-left"></i>
+                  </div>
+                  <div class="media-body text-center">
+                    <h3><a class="nav-link" href="/register">Register</a></h3>
                   </div>
                 </div>
               </div>

@@ -8,6 +8,7 @@ use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\dashboardController;
 use App\Http\Controllers\PublisherController;
 use App\Http\Controllers\CustomerController;
+use App\Http\Controllers\Auth\RegisterController;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,15 +21,20 @@ use App\Http\Controllers\CustomerController;
 |
 */
 
+
+
+
 Route::get('/', function () {
     return view('welcome');
 });
+
 
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Route::get('/listbooks', [BookController::class, 'listBooks'])->name('books');
+
 
 Route::middleware(['auth', 'isAdmin'])->group(function() 
 {
@@ -85,5 +91,5 @@ Route::middleware(['auth', 'isAdmin'])->group(function()
   //Dashboard routes
   Route::get('/dashboard', function () {
     return view('dashboard');
-});
+  });
 });
