@@ -19,7 +19,7 @@ return new class extends Migration
             $table->string('email')->unique();
             $table->date('email_verified_at')->nullable();
             $table->string('password');
-            $table->string('user_type')->nullable();
+            $table->string('user_type')->default('admin');
             $table->rememberToken();
             $table->timestamps();
         });
