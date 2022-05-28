@@ -18,6 +18,7 @@
                         <thead>
                             <th>ID</th>
                             <th>Book Name</th>
+                            <th>ISBN number</th>
                             <th>Category</th>
                             <th>Author</th>
                             <th>Publisher</th>
@@ -30,6 +31,7 @@
                                 <tr>
                                     <td class="id">{{ $book->id }}</td>
                                     <td>{{ $book->name }}</td>
+                                    <td>{{ $book->ISBN }}</td>
                                     <td>{{ $book->category->name }}</td>
                                     <td>{{ $book->author->name }}</td>
                                     <td>{{ $book->publisher->name }}</td>

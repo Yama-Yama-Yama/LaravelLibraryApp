@@ -22,6 +22,17 @@
                                 </div>
                             @enderror
                         </div>
+
+                        <div class="form-group">
+                            <label>ISBN Number</label>
+                            <input type="text" class="form-control @error('name') isinvalid @enderror"
+                                placeholder="ISBN" name="ISBN" value="{{ $book->ISBN }}" >
+                            @error('name')
+                                <div class="alert alert-danger" role="alert">
+                                    {{ $message }}
+                                </div>
+                            @enderror
+                        </div>
                         <div class="form-group">
                             <label>Category</label>
                             <select class="form-control @error('category_id') isinvalid @enderror " name="category_id"

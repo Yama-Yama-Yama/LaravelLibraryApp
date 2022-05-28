@@ -66,6 +66,7 @@ class BookController extends Controller
         $book->author_id = $request->author_id;
         $book->category_id = $request->category_id;
         $book->publisher_id = $request->publisher_id;
+        $book->ISBN = $request->ISBN;
         $book->save();
         return redirect()->route('books');
     }
