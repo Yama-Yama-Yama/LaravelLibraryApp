@@ -9,6 +9,7 @@ use App\Http\Controllers\dashboardController;
 use App\Http\Controllers\PublisherController;
 use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\Auth\RegisterController;
+use Illuminate\Support\Facades\Auth;
 
 /*
 |--------------------------------------------------------------------------
