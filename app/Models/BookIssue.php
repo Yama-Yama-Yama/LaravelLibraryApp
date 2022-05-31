@@ -13,12 +13,12 @@ class BookIssue extends Model
 
     public function customer(): BelongsTo
     {
-        return $this->belongsTo(customer::class, 'customer_id', 'id');
+        return $this->belongsTo(Customer::class, 'customer_id', 'id');
     }
 
     public function book(): BelongsTo
     {
-        return $this->belongsTo(book::class, 'book_id', 'id');
+        return $this->belongsTo(Book::class, 'book_id', 'id');
     }
 
     protected $casts = [
