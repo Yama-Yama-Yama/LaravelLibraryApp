@@ -16,14 +16,14 @@ class BookController extends Controller
     //Könyvek megjelenítése
     public function index()
     {
-        return view('book.index', [
+        return view('Book.index', [
             'books' => book::Paginate(10)
         ]);
     }
     //Könyv lista nem adminnak
     public function listBooks()
     {
-        return view('book.listBooks', [
+        return view('Book.listBooks', [
             'books' => book::Paginate(10)
         ]);
     }
@@ -31,7 +31,7 @@ class BookController extends Controller
     //Könyv hozzáadása
     public function create()
     {
-        return view('book.create',[
+        return view('Book.create',[
             'authors' => author::latest()->get(),
             'publishers' => publisher::latest()->get(),
             'categories' => category::latest()->get(),
@@ -50,7 +50,7 @@ class BookController extends Controller
     //Könyv editelése
     public function edit(book $book)
     {
-        return view('book.edit',[
+        return view('Book.edit',[
             'authors' => author::latest()->get(),
             'publishers' => publisher::latest()->get(),
             'categories' => category::latest()->get(),
