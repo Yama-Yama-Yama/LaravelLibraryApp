@@ -15,16 +15,16 @@ class Book extends Model
     
     public function author(): BelongsTo
     {
-       return $this->belongsTo(author::class,'author_id','id');
+       return $this->belongsTo(Author::class,'author_id','id');
     }
 
     public function category(): BelongsTo
     {
-        return $this->belongsTo(category::class);
+        return $this->belongsTo(Category::class);
     }
 
     public function publisher(): BelongsTo
     {
-        return $this->belongsTo(publisher::class);
+        return $this->belongsTo(Publisher::class);
     }
 }
