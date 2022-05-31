@@ -17,14 +17,14 @@ class BookController extends Controller
     public function index()
     {
         return view('book.index', [
-            'books' => book::Paginate(10)
+            'books' => Book::Paginate(10)
         ]);
     }
     //Könyv lista nem adminnak
     public function listBooks()
     {
         return view('book.listbooks', [
-            'books' => book::Paginate(10)
+            'books' => Book::Paginate(10)
         ]);
     }
 
@@ -32,16 +32,16 @@ class BookController extends Controller
     public function create()
     {
         return view('book.create',[
-            'authors' => author::latest()->get(),
-            'publishers' => publisher::latest()->get(),
-            'categories' => category::latest()->get(),
+            'authors' => Author::latest()->get(),
+            'publishers' => Publisher::latest()->get(),
+            'categories' => Category::latest()->get(),
         ]);
     }
 
     //Könyv tárolása
     public function store(StorebookRequest $request)
     {
-        book::create($request->validated() + [
+        Book::create($request->validated() + [
             'status' => '0'
         ]);
         return redirect()->route('books');
@@ -51,9 +51,9 @@ class BookController extends Controller
     public function edit(book $book)
     {
         return view('book.edit',[
-            'authors' => author::latest()->get(),
-            'publishers' => publisher::latest()->get(),
-            'categories' => category::latest()->get(),
+            'authors' => Author::latest()->get(),
+            'publishers' => Publisher::latest()->get(),
+            'categories' => Category::latest()->get(),
             'book' => $book
         ]);
     }
@@ -61,7 +61,7 @@ class BookController extends Controller
     //Könyv update
     public function update(UpdatebookRequest $request, $id)
     {
-        $book = book::find($id);
+        $book = Book::find($id);
         $book->name = $request->name;
         $book->author_id = $request->author_id;
         $book->category_id = $request->category_id;
@@ -74,7 +74,7 @@ class BookController extends Controller
     //Könyv törlése
     public function destroy($id)
     {
-        book::find($id)->delete();
+        Book::find($id)->delete();
         return redirect()->route('books');
     }
 }
