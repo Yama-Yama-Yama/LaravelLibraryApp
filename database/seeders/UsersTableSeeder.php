@@ -15,7 +15,7 @@ class UsersTableSeeder extends Seeder
      */
     public function run()
     {
-        if(config('admin.admin_name')) {
+        if(config('admin')) {
             User::firstOrCreate(
                 ['email' => 'admin@admin.com'], [
                     'name' => config('admin'),
