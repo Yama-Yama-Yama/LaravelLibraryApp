@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\customer;
+use App\Models\Customer;
 use App\Http\Requests\StorecustomerRequest;
 use App\Http\Requests\UpdateCustomerRequest;
 
@@ -13,7 +13,7 @@ class CustomerController extends Controller
     public function index()
     {
         return view('customer.index', [
-            'customers' => customer::Paginate(5)
+            'customers' => Customer::Paginate(5)
         ]);
     }
 
